@@ -24,7 +24,7 @@
 <meta property="og:description" content="Emmet 语法 Emmet 常用写代码辅助插件12345678910111213141516171819202122232425262728293031323334353637div.class  example:div.foot &#x3D;&#x3D;  &lt;div class&#x3D;&quot;foot&quot;&gt;&lt;&#x2F;div&gt;div#id  Example:div#header   &#x3D;&#x3D; &amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-11-29T13:13:23.000Z">
-<meta property="article:modified_time" content="2022-11-29T15:10:16.140Z">
+<meta property="article:modified_time" content="2022-11-29T15:41:49.272Z">
 <meta property="article:author" content="zyc2333">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          2.6k 字
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          16 分钟
+          22 分钟
         
       </span>
     
@@ -297,6 +297,12 @@
 <li><p>常用规范</p>
 <p>block element modifier包含多个单词时, 用一个中划线-链接<br>例如：<br>将css的一个职责命名为 .block{} ，而其子职责可以表示为 .block1-block2{} ；<br>若属于同一职责里的功能，则可命名为 .block__element{} ；<br>若是该选择器的功能有不同形态，则可命名为 .block–modifier{} 。</p>
 </li>
+<li><p>example<br>1.NO element and no modifiers</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">”btn”</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>  .btn &#123;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>2.with a modifier(–) </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn--secondary&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.btn</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">display</span>: inline-block;</span><br><span class="language-css">  <span class="hljs-attribute">color</span>: blue;</span><br><span class="language-css">&#125;</span><br><span class="language-css"><span class="hljs-selector-class">.btn--secondary</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">color</span>: green;</span><br><span class="language-css">&#125;  </span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>  <br></code></pre></td></tr></table></figure>
+<p>3.Component With Elements(__)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;photo&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;photo__img&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;me.jpg&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;photo__caption&quot;</span>&gt;</span>Look at me!<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.photo</span> &#123; &#125; <span class="hljs-comment">/* Specificity of 10 */</span></span><br><span class="language-css"><span class="hljs-selector-class">.photo__img</span> &#123; &#125; <span class="hljs-comment">/* Specificity of 10 */</span></span><br><span class="language-css"><span class="hljs-selector-class">.photo__caption</span> &#123; &#125; <span class="hljs-comment">/* Specificity of 10 */</span></span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 <li><p>更多请<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42131342/article/details/112408778">点击了解</a></p>
 </li>
 </ul>
