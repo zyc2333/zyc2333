@@ -16,21 +16,23 @@
   <meta name="author" content="zyc2333">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Emmet 语法 Emmet 常用写代码辅助插件12345678910111213141516171819202122232425262728293031323334353637div.class  example:div.foot &#x3D;&#x3D;  &lt;div class&#x3D;&quot;foot&quot;&gt;&lt;&#x2F;div&gt;div#id  Example:div#header   &#x3D;&#x3D; &amp;">
+    <meta name="description" content="CSSCSS引入 link引入   In index.html:  12&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;css&#x2F;index.css&quot;&gt;&lt;h1&gt;你好，朋友&lt;&#x2F;h1&gt;  In index.css:   123h1&amp;#123;color: blue;&amp;#125;   link标签可以放在head（推荐）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Coding-rule">
-<meta property="og:url" content="https://zyc2333.github.io/2019/11/29/coding-rule/index.html">
+<meta property="og:title" content="CSS">
+<meta property="og:url" content="https://zyc2333.github.io/2019/11/30/css_part/index.html">
 <meta property="og:site_name" content="Academy City">
-<meta property="og:description" content="Emmet 语法 Emmet 常用写代码辅助插件12345678910111213141516171819202122232425262728293031323334353637div.class  example:div.foot &#x3D;&#x3D;  &lt;div class&#x3D;&quot;foot&quot;&gt;&lt;&#x2F;div&gt;div#id  Example:div#header   &#x3D;&#x3D; &amp;">
+<meta property="og:description" content="CSSCSS引入 link引入   In index.html:  12&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;css&#x2F;index.css&quot;&gt;&lt;h1&gt;你好，朋友&lt;&#x2F;h1&gt;  In index.css:   123h1&amp;#123;color: blue;&amp;#125;   link标签可以放在head（推荐）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-11-29T13:13:23.000Z">
-<meta property="article:modified_time" content="2022-11-29T15:41:49.272Z">
+<meta property="og:image" content="https://zyc2333.github.io/image/check-element.png">
+<meta property="article:published_time" content="2019-11-30T11:13:23.000Z">
+<meta property="article:modified_time" content="2022-11-30T15:01:26.170Z">
 <meta property="article:author" content="zyc2333">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zyc2333.github.io/image/check-element.png">
   
   
   
-  <title>Coding-rule - Academy City</title>
+  <title>CSS - Academy City</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Coding-rule"></span>
+            <span id="subtitle" data-typed-text="CSS"></span>
           
         </div>
 
@@ -206,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2019-11-29 21:13" pubdate>
-          2019年11月29日 晚上
+        <time datetime="2019-11-30 19:13" pubdate>
+          2019年11月30日 晚上
         </time>
       </span>
     
@@ -218,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          2k 字
         
       </span>
     
@@ -229,7 +231,7 @@
         
         
         
-          22 分钟
+          17 分钟
         
       </span>
     
@@ -267,44 +269,125 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Coding-rule</h1>
+            <h1 style="display: none">CSS</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Emmet-语法"><a href="#Emmet-语法" class="headerlink" title="Emmet 语法"></a>Emmet 语法</h1><ul>
-<li>Emmet 常用写代码辅助插件<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs html">div.class<br>  example:div.foot ==  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;foot&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>div#id<br>  Example:div#header <br>  == <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>div&gt;ul&gt;li<br>  Example:div#header&gt;nav&gt;a <br>  == <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span><br><br>ul&gt;li*3<br>  Example:ul.container&gt;li*3&gt;span <br>  ==<br>   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span> = <span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>ul&gt;li*3&gt;&#123;List$&#125;<br>  Example:ul.container&gt;li*3&gt;span&gt;&#123;nihao$&#125; <br>  ==<br>   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span> = <span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>你好1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>你好2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>你好3<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>header+main+footer<br>  Example:<br>    header+(div.item&gt;(.main+.aside))&gt;footer<br>    ==<br>    <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;aside&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+                <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="CSS引入"><a href="#CSS引入" class="headerlink" title="CSS引入"></a>CSS引入</h2><ul>
+<li><p><strong>link引入</strong></p>
+<h2 id="In-index-html"><a href="#In-index-html" class="headerlink" title="  In index.html:  "></a>  In index.html:<br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/index.css&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>你好，朋友<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br></code></pre></td></tr></table></figure></h2><p>  In index.css:</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">h1</span>&#123;<br><span class="hljs-attribute">color</span>: blue;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>  link标签可以放在head（推荐）也可以放在body。</p>
+</li>
+<li><p><strong>CSS代码放在style标签里</strong></p>
+<p>  In index.html:</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-tag">h1</span>&#123;</span><br><span class="language-css">    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">40px</span>;</span><br><span class="language-css">&#125;</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>  style标签可以放在任意地方。</p>
+</li>
+<li><p><strong>@import引入css文件</strong></p>
+<p>  In index.css:</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@import</span> url(url);<br><span class="hljs-keyword">@import</span> <span class="hljs-string">&quot;main.css&quot;</span>;<br></code></pre></td></tr></table></figure>
+<p>  url可以加单引号、双引号；也可以放置在style标签里；@import必须放在css开头;必须要有分号。</p>
+</li>
+<li><p><strong>html标签里添加css语法</strong></p>
+<p>  In index.html:</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:orange; font: size 40px;&quot;</span>&gt;</span>你好吗，朋友<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>  通常不推荐使用；一般适用于js直接修改样式的场景。</p>
+</li>
 </ul>
-<h1 id="class命名规范"><a href="#class命名规范" class="headerlink" title="class命名规范"></a>class命名规范</h1><h2 id="传统起名法"><a href="#传统起名法" class="headerlink" title="传统起名法"></a>传统起名法</h2><ul>
-<li>布局类：header,footer,container,main,content,aside,page,section</li>
-<li>交互类：tips,alert,modal,pop,panel,tabs,accordion,slide,overlay</li>
-<li>状态类：active,current,checked,hover,fail,success,warn,error,on,off</li>
-<li>包裹类：wrapper,inner,box,block</li>
-<li>大小类： s, m,l,xl,large,small</li>
-<li>主次类： primary,secondary,sub,minor</li>
-<li>样式类：text-large,color-primary,m-0,mt-10</li>
-<li>结构类：hd,bd,ft,top,span…</li>
-<li>列表类：list,item,field…</li>
-<li>导航类：nav,prev,next,last…</li>
+<h2 id="延伸拓展：link和-import引入css有什么区别？"><a href="#延伸拓展：link和-import引入css有什么区别？" class="headerlink" title="延伸拓展：link和@import引入css有什么区别？"></a>延伸拓展：link和@import引入css有什么区别？</h2><ul>
+<li>link标签是html的，js可以创建、修改；@import是css的，js管辖范围外。</li>
+<li>link是标签，可以并行加载；@import类似嵌套，会增加加载时间，不推荐。</li>
 </ul>
-<h2 id="BEM命名法"><a href="#BEM命名法" class="headerlink" title="BEM命名法"></a>BEM命名法</h2><h3 id="block-element-–-modifier"><a href="#block-element-–-modifier" class="headerlink" title="[block]__[element]–[modifier]"></a>[block]__[element]–[modifier]</h3><ul>
-<li><p>适用对象：css的class</p>
+<h2 id="书写规范"><a href="#书写规范" class="headerlink" title="书写规范"></a>书写规范</h2><ul>
+<li><p>css两种语法</p>
+<p><strong>注释</strong>：&#x2F;**&#x2F;</p>
+<table>
+<thead>
+<tr>
+<th align="center">写法</th>
+<th align="center">特点</th>
+<th align="center">例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">语法1</td>
+<td align="center">@开头</td>
+<td align="center">@media screen and (min-width:900px){main{padding:10px;}}&#x3D;&#x3D;如果屏幕宽度&gt;&#x3D;900px,该css生效，即padding为10px。</td>
+</tr>
+<tr>
+<td align="center">语法2</td>
+<td align="center">选择器{属性1:值;属性2:值}</td>
+<td align="center">p{color:red}</td>
+</tr>
+</tbody></table>
 </li>
-<li><p>原因：css样式污染的根本原因，是因为css没有作用域。BEM通过特殊的命名方式，给css创造一个“作用域”，就能有效避 免css样式全局污染。</p>
+<li><p><strong>合适的缩进和对齐，注意可读性。</strong></p>
 </li>
-<li><p>构成：<br>1.block<br>  模块。最外的爸爸模块。<br>2.element<br>  元素。爸爸模块中包含的元素，即爸爸的儿子，也是指向的当前元素。<br>3.modifier<br>  相同的element，但是有微小的差异造成的不同element。</p>
+</ul>
+<h2 id="CSS调试"><a href="#CSS调试" class="headerlink" title="CSS调试"></a>CSS调试</h2><ul>
+<li>浏览器检查元素，点击元素可以追溯代码，找到错因。</li>
+<li>浏览器调试效果。</li>
+<li>检查路径：ctrl+单击跳转成功即url链接成功。<br><img src="/image/check-element.png" srcset="/img/loading.gif" lazyload alt="检查元素"></li>
+</ul>
+<h2 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><ul>
+<li>一般默认样式覆盖</li>
+<li>覆盖全局</li>
+<li>例子： <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span>&#123;<br><span class="hljs-attribute">text-decoration</span>:none;<br>&#125;<br></code></pre></td></tr></table></figure>
+ 修改了所有a标签的样式。</li>
+</ul>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><ul>
+<li>用于选择一个拥有特定id的元素。</li>
+<li>例：  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">&lt;style&gt;<br><span class="hljs-selector-id">#header</span>&#123;<br>    <span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span>;<br>    <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid lightgrey;<br>&#125;<br>&lt;/style&gt;<br>&lt;<span class="hljs-selector-tag">div</span> id=&quot;<span class="hljs-selector-tag">header</span>&quot;&gt;头&lt;/<span class="hljs-selector-tag">div</span>&gt;<br></code></pre></td></tr></table></figure>
+  <strong>注意写法：#号</strong></li>
+</ul>
+<h3 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a>class选择器</h3><ul>
+<li>用于选中一种class的元素。</li>
+<li>例：  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span>&#123;<br>    <span class="hljs-attribute">color</span>: red;<br>&#125;<br></code></pre></td></tr></table></figure>
+  <strong>点开头可以理解为class.简写</strong></li>
+</ul>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><ul>
+<li>用来选择处于特定状态的元素</li>
+<li>例1：  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>&#123;<br>    <span class="hljs-attribute">color</span>: green;<br>&#125;<br>处于focus状态时<span class="hljs-selector-tag">a</span>标签变为绿色。<br></code></pre></td></tr></table></figure></li>
+<li>例2：  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:focus</span>&#123;<br>    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red;<br>    <span class="hljs-attribute">outline</span>: <span class="hljs-number">1px</span> solid blueviolet;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h3><ul>
+<li>给元素内部(::开头 结尾::)添加内容</li>
+<li>例：  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.icon</span><span class="hljs-selector-pseudo">::before</span>&#123;<br>    <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;🗡&quot;</span>;<br>&#125;<br>&lt;<span class="hljs-selector-tag">span</span> class=&quot;<span class="hljs-attribute">icon</span>&quot;&gt;你好得很&lt;/<span class="hljs-selector-tag">span</span>&gt;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><ul>
+<li>[attr]选择包含attr属性的所有元素</li>
+<li>[attr&#x3D;val]仅选择值为val的attr属性元素</li>
+<li>例1：  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-attr">[disabled]</span>&#123;<br>    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid yellow;<br>&#125;<br>&lt;<span class="hljs-selector-tag">button</span> disabled&gt;按不动&lt;/<span class="hljs-selector-tag">button</span>&gt;<br></code></pre></td></tr></table></figure></li>
+<li>例2：  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-attr">[title=<span class="hljs-string">&quot;summer&quot;</span>]</span>&#123;<br>    <span class="hljs-attribute">color</span>:blue;<br>&#125;<br>&lt;<span class="hljs-selector-tag">p</span> title=&quot;summer&quot;&gt;&lt;/<span class="hljs-selector-tag">p</span>&gt;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="通配选择器"><a href="#通配选择器" class="headerlink" title="通配选择器"></a>通配选择器</h3><ul>
+<li>&#96;&#96;&#96;css<ul>
+<li>{<br>  border:1px solid #fff;<br>  } <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css">-  <span class="hljs-selector-class">.box</span> * box的所有儿子<br>### 组合选择器AB<br>**<span class="hljs-number">1</span>.组合选择器<span class="hljs-selector-tag">A</span> <span class="hljs-selector-tag">B</span>**<br>- <span class="hljs-selector-tag">A</span>内所有的<span class="hljs-selector-tag">B</span><br>- AB间有空格<br>- 例：<br>    ```css<br>    <span class="hljs-selector-class">.menu</span> <span class="hljs-selector-class">.item</span>&#123;<br>        <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid green;<br>    &#125;<br></code></pre></td></tr></table></figure>
+ 选择了menu的所有item儿孙。</li>
+</ul>
 </li>
-<li><p>常用规范</p>
-<p>block element modifier包含多个单词时, 用一个中划线-链接<br>例如：<br>将css的一个职责命名为 .block{} ，而其子职责可以表示为 .block1-block2{} ；<br>若属于同一职责里的功能，则可命名为 .block__element{} ；<br>若是该选择器的功能有不同形态，则可命名为 .block–modifier{} 。</p>
-</li>
-<li><p>example<br>1.NO element and no modifiers</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">”btn”</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>  .btn &#123;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p>2.with a modifier(–) </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn--secondary&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.btn</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">display</span>: inline-block;</span><br><span class="language-css">  <span class="hljs-attribute">color</span>: blue;</span><br><span class="language-css">&#125;</span><br><span class="language-css"><span class="hljs-selector-class">.btn--secondary</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">color</span>: green;</span><br><span class="language-css">&#125;  </span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>  <br></code></pre></td></tr></table></figure>
-<p>3.Component With Elements(__)</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;photo&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;photo__img&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;me.jpg&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;photo__caption&quot;</span>&gt;</span>Look at me!<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.photo</span> &#123; &#125; <span class="hljs-comment">/* Specificity of 10 */</span></span><br><span class="language-css"><span class="hljs-selector-class">.photo__img</span> &#123; &#125; <span class="hljs-comment">/* Specificity of 10 */</span></span><br><span class="language-css"><span class="hljs-selector-class">.photo__caption</span> &#123; &#125; <span class="hljs-comment">/* Specificity of 10 */</span></span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
-<li><p>更多请<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42131342/article/details/112408778">点击了解</a></p>
-</li>
+</ul>
+<p><strong>2.组合选择器A&gt;B</strong></p>
+<ul>
+<li>只选择了儿子</li>
+</ul>
+<p><strong>3.组合选择器AB</strong></p>
+<ul>
+<li>又是A又是B</li>
+</ul>
+<p><strong>4.组合选择器A,B</strong></p>
+<ul>
+<li>分别选中A和B</li>
+</ul>
+<p><strong>5.组合选择器A+B</strong></p>
+<ul>
+<li>选中A下一个相邻的B元素</li>
+</ul>
+<p><strong>6.组合选择器A~B</strong></p>
+<ul>
+<li>选中A后面全部相邻的B元素</li>
 </ul>
 
                 
@@ -323,8 +406,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Coding-rule</div>
-      <div>https://zyc2333.github.io/2019/11/29/coding-rule/</div>
+      <div>CSS</div>
+      <div>https://zyc2333.github.io/2019/11/30/css_part/</div>
     </div>
     <div class="license-meta">
       
@@ -336,7 +419,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2019年11月29日</div>
+          <div>2019年11月30日</div>
         </div>
       
       
@@ -368,18 +451,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2019/11/30/css_part/" title="CSS">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CSS</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2019/11/28/html_part/" title="html">
-                        <span class="hidden-mobile">html</span>
+                      <a href="/2019/11/29/coding-rule/" title="Coding-rule">
+                        <span class="hidden-mobile">Coding-rule</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
