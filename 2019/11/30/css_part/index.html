@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zyc2333.github.io/image/check-element.png">
 <meta property="article:published_time" content="2019-11-30T11:13:23.000Z">
-<meta property="article:modified_time" content="2022-12-01T15:49:09.002Z">
+<meta property="article:modified_time" content="2022-12-02T15:02:07.088Z">
 <meta property="article:author" content="zyc2333">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://zyc2333.github.io/image/check-element.png">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.5k 字
+          5.8k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          30 分钟
+          49 分钟
         
       </span>
     
@@ -454,6 +454,69 @@
 </li>
 <li><p>多行超出（将文字设置为单行，超出展示省略号）</p>
  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">h1</span> &#123;<br><span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;<br><span class="hljs-attribute">overflow</span>: hidden;     <br><span class="hljs-attribute">display</span>: -webkit-box;<br>-webkit-line-clamp: <span class="hljs-number">2</span>; <br>-webkit-box-orient: vertical;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="布局模式"><a href="#布局模式" class="headerlink" title="布局模式"></a>布局模式</h2><ul>
+<li><p>**普通流(Normal flow)**：所有元素都是普通流中的一部分，包括块(block)布局和行(inline)布局。</p>
+</li>
+<li><p>表格布局：仅用来设置表格。</p>
+</li>
+<li><p>浮动布局：用来让元素左右排放。过时。</p>
+</li>
+<li><p><strong>定位布局</strong>：用来定位元素，将某元素固定在某位置。</p>
+</li>
+<li><p>多列布局：用来设置多列。不常用。</p>
+</li>
+<li><p><strong>弹性盒</strong>：常用。</p>
+</li>
+<li><p>网格布局：通过二维网格设置布局。可用。</p>
+</li>
+</ul>
+<h2 id="标准盒模型"><a href="#标准盒模型" class="headerlink" title="标准盒模型"></a>标准盒模型</h2><ul>
+<li><p>Content：内容。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">33.3%</span>;  <br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;   <span class="hljs-comment">/*我的内容宽度等于父亲的内容宽度，有边框等时加起来容易超出*/</span><br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;  <span class="hljs-comment">/*我的content的高度等于父亲content的高度，父亲必须设置过height*/</span><br>  <span class="hljs-attribute">min-width</span>: <span class="hljs-number">200px</span>;  <span class="hljs-comment">/*最小宽度，缩小时不会变形*/</span><br>  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">500px</span>;  <span class="hljs-comment">/*最大宽度，放大时不变形*/</span><br>  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>; <span class="hljs-comment">/*100vh表示窗口的高度*/</span><br>  <span class="hljs-attribute">max-height</span>: <span class="hljs-number">100vh</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Padding: 内容到边框的距离。</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;<br>   <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">10px</span>;<br>   <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">40px</span>;<br>   <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">20px</span>;<br>   <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">30px</span>;<br><br>   <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span> <span class="hljs-number">40px</span>;  <span class="hljs-comment">/*上 右 下 左 */</span><br>   <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>; <br>   <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>; <span class="hljs-comment">/*10px 20px 10px 20px */</span><br>  <br> &#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Border：边框。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">border-top</span>: <span class="hljs-number">10px</span> solid <span class="hljs-number">#ccc</span>;   <span class="hljs-comment">/* 上边框 */</span><br>  <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">5px</span> dashed yellow;<br>  <span class="hljs-attribute">border-left</span>: <span class="hljs-number">10px</span> solid transparent;<br>  <span class="hljs-attribute">border-right</span>: <span class="hljs-number">1px</span> dotted black; <br><br>  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid black; <span class="hljs-comment">/* 四边边框，solid、dashed、dotted */</span><br>  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;  <span class="hljs-comment">/* 设置圆角 */</span><br>  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;  <span class="hljs-comment">/* 宽高相同时为圆形 */</span><br>  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span> <span class="hljs-number">40px</span>; <span class="hljs-comment">/*左上，右上，右下，左下*/</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p> <strong>画圆：radius &#x3D; 宽高的一半</strong></p>
+<ul>
+<li>Margin：和其他元素的距离。</li>
+</ul>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;<br>    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>;<br>    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">40px</span>;<br>    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;<br>    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">30px</span>;<br>   <br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span> <span class="hljs-number">40px</span>; <span class="hljs-comment">/*上 右 下 左 */</span><br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;<br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>;    <span class="hljs-comment">/*10px 20px 10px 20px */</span><br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;       <span class="hljs-comment">/* 0 auto 0 auto; margin-left=margin-right=auto让块级盒子居中 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>如何实现footer在最底下</p>
+<p>  固定header和footer的height，设置main的min-height&#x2F;height为cal(窗口高度 -h(header)-h(footer))</p>
+</li>
+</ul>
+<h2 id="IE盒模型"><a href="#IE盒模型" class="headerlink" title="IE盒模型"></a>IE盒模型</h2><ul>
+<li><p>box-sizing: border-box; </p>
+<p>padding和border的值不会影响元素的宽高，相当于把padding和border的值都算在content里。</p>
+</li>
+</ul>
+<h2 id="块级盒子-vs-行级盒子"><a href="#块级盒子-vs-行级盒子" class="headerlink" title="块级盒子 vs. 行级盒子"></a>块级盒子 vs. 行级盒子</h2><h3 id="块级-block-level-盒子"><a href="#块级-block-level-盒子" class="headerlink" title="块级(block-level)盒子"></a>块级(block-level)盒子</h3><ul>
+<li>会在水平方向上扩展并占据父容器在该方向上的所有可用空间；下一个盒子会换到新行</li>
+<li>width 、height、padding、margin、border都生效</li>
+<li>块级标签  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>...<span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">dl</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="行级-inline-level-盒子"><a href="#行级-inline-level-盒子" class="headerlink" title="行级(inline-level)盒子"></a>行级(inline-level)盒子</h3><ul>
+<li><p>多个行级盒子在一行顺序摆放，放不下会自动换行</p>
+</li>
+<li><p><strong>对于仅展示文本的标签，如 a、span、em、strong、label，<br>width 和 height 属性设置无效。padding、margin左右有效，上下margin无效（上下padding会撑开自己的边框和背景但不占空间）</strong></p>
+</li>
+<li><p>行级标签</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">img</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">input</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="inline-block"><a href="#inline-block" class="headerlink" title="inline block"></a>inline block</h2><p>既有块级特性：能设置width、height、margin、padding、border；又有行级特性：仅占据自身空间、多个在一行排列。</p>
+<h2 id="small-quiz——inline元素缝隙问题"><a href="#small-quiz——inline元素缝隙问题" class="headerlink" title="small quiz——inline元素缝隙问题"></a>small quiz——inline元素缝隙问题</h2><ul>
+<li><p>TAB、 LF(&#x2F;n 换行，老打字机打印头下移一行)、 CR(&#x2F;r 回车，老打字机打印头到纸张开头)、 SPACE 都是空白字符</p>
+</li>
+<li><p>多个连续的空白字符会合并成一个空格，而空格也占据一个字符的空间</p>
+</li>
+<li><p>去除方法：方法1. HTML里inline元素间去除空格和换行；方法2: 用flex&#x2F;grid布局；方法3: 容器font-size设置0；</p>
+</li>
 </ul>
 
                 
