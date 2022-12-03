@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zyc2333.github.io/image/check-element.png">
 <meta property="article:published_time" content="2019-11-30T11:13:23.000Z">
-<meta property="article:modified_time" content="2022-12-02T15:02:07.088Z">
+<meta property="article:modified_time" content="2022-12-03T15:37:50.958Z">
 <meta property="article:author" content="zyc2333">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://zyc2333.github.io/image/check-element.png">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.8k 字
+          8k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          49 分钟
+          67 分钟
         
       </span>
     
@@ -323,7 +323,7 @@
 </ul>
 <h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><ul>
 <li>用于选择一个拥有特定id的元素。</li>
-<li>例：  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">&lt;style&gt;<br><span class="hljs-selector-id">#header</span>&#123;<br>    <span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span>;<br>    <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid lightgrey;<br>&#125;<br>&lt;/style&gt;<br>&lt;<span class="hljs-selector-tag">div</span> id=&quot;<span class="hljs-selector-tag">header</span>&quot;&gt;头&lt;/<span class="hljs-selector-tag">div</span>&gt;<br></code></pre></td></tr></table></figure>
+<li>例：  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">&lt;styl&gt;<br><span class="hljs-selector-id">#header</span>&#123;<br>    <span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span>;<br>    <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid lightgrey;<br>&#125;<br>&lt;/style&gt;<br>&lt;<span class="hljs-selector-tag">div</span> id=&quot;<span class="hljs-selector-tag">header</span>&quot;&gt;头&lt;/<span class="hljs-selector-tag">div</span>&gt;<br></code></pre></td></tr></table></figure>
   <strong>注意写法：#号</strong></li>
 </ul>
 <h3 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a>class选择器</h3><ul>
@@ -518,6 +518,56 @@
 <li><p>去除方法：方法1. HTML里inline元素间去除空格和换行；方法2: 用flex&#x2F;grid布局；方法3: 容器font-size设置0；</p>
 </li>
 </ul>
+<h2 id="外边距折叠"><a href="#外边距折叠" class="headerlink" title="外边距折叠"></a>外边距折叠</h2><ul>
+<li><p>块级元素的上外边距和下外边距有时会合并为一个外边距，其大小取其中的最大者</p>
+</li>
+<li><p>浮动元素和绝对定位元素的外边距不会折叠</p>
+</li>
+<li><p>相邻折叠：相邻的两个块级元素之间的外边距会合并，取其中最大值。</p>
+</li>
+<li><p>嵌套折叠：如果在父元素与其嵌套的后代元素间没有border、padding、行内内容，也没有创建块格式化上下文，父子外边距会折叠。</p>
+<p>  <strong>容器加overflow: hidden 或者 auto 、border、padding可阻止折叠。</strong></p>
+</li>
+<li><p>空块折叠：如果一个块级元素中不包含任何内容，并且在其 margin-top 与 margin-bottom 之间没有边框、内边距、行内内容、height、min-height 将两者分开，则该元素的上下外边距会折叠。</p>
+</li>
+<li><p>左右外边距不折叠</p>
+</li>
+</ul>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><ul>
+<li>border-collapse: collapse &#x2F; separate</li>
+</ul>
+<h2 id="背景样式"><a href="#背景样式" class="headerlink" title="背景样式"></a>背景样式</h2><ul>
+<li><p>基本样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.hero</span> &#123;<br><span class="hljs-attribute">height</span>: <span class="hljs-number">120px</span>;<br><span class="hljs-comment">/* background: lightpink url(static/flamingo.png) center center no-repeat;  只有一张图片*/</span><br><span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">static/flamingo.png</span>) center center no-repeat, <span class="hljs-built_in">url</span>(<span class="hljs-string">static/griaffe.png</span>) <span class="hljs-number">10px</span>/left center no-repeat;<span class="hljs-comment">/*多张图片不能加背景色*/</span><br><span class="hljs-attribute">background-color</span>: lightcyan;<br><span class="hljs-attribute">background-size</span>: contain; <span class="hljs-comment">/* or cover */</span><br> &#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>简单背景渐变</p>
+<p>  渐变 linear-gradient，默认从上到下。例：</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.hero</span> &#123;<br><span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(blue, pink);<br><span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(to right, blue, pink);<span class="hljs-comment">/*从左到右*/</span><br><span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(to bottom right, blue, pink);<span class="hljs-comment">/*从右下到左上*/</span><br><span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">45deg</span>, blue, pink);<span class="hljs-comment">/*45°，*/</span><br><span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(red, yellow, blue, orange);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>复杂背景渐变</p>
+<p>  精准控制渐变：</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs css">  <span class="hljs-selector-class">.hero</span> &#123;<br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(to right, pink <span class="hljs-number">30px</span>, red <span class="hljs-number">50%</span>, blue);<br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(to right, cyan <span class="hljs-number">50%</span>, red <span class="hljs-number">50%</span>);<br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(to  bottom right, cyan <span class="hljs-number">33%</span>, red <span class="hljs-number">33%</span> <span class="hljs-number">66%</span>, pink <span class="hljs-number">66%</span>); <br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(to right, blue, <span class="hljs-number">10%</span>, pink); <br>  <span class="hljs-attribute">background</span>:<br>    <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">217deg</span>, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,.<span class="hljs-number">8</span>), <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>) <span class="hljs-number">70.71%</span>),<br>    <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">127deg</span>, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0</span>,.<span class="hljs-number">8</span>), <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>) <span class="hljs-number">70.71%</span>),<br>    <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">336deg</span>, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">255</span>,.<span class="hljs-number">8</span>), <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0</span>) <span class="hljs-number">70.71%</span>);<br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">radial-gradient</span>(red, blue);<br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">radial-gradient</span>(red <span class="hljs-number">10px</span>, yellow <span class="hljs-number">30%</span>, <span class="hljs-number">#1e90ff</span> <span class="hljs-number">50%</span>);<br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">radial-gradient</span>(red <span class="hljs-number">20px</span>, yellow <span class="hljs-number">20px</span> <span class="hljs-number">40px</span>, <span class="hljs-number">#1e90ff</span> <span class="hljs-number">40px</span>);<br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">radial-gradient</span>(at <span class="hljs-number">0%</span> <span class="hljs-number">0%</span>, red <span class="hljs-number">10px</span>, yellow <span class="hljs-number">50%</span>, <span class="hljs-number">#1e90ff</span> <span class="hljs-number">70%</span>);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;<br>    <span class="hljs-comment">/* x 偏移量 | y 偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */</span><br>    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">1px</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.2</span>);<br>    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;<br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;<br>  &#125;<br></code></pre></td></tr></table></figure>
+<h2 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h2><p>一行文字占据的垂直空间</p>
+<ul>
+<li>line-height: 1.5;  当前元素font-size的1.5倍。该<strong>倍数</strong>会继承给后代。推荐</li>
+<li>line-height: 20px; 占据高度固定值</li>
+<li>line-height: 150%; 当前元素font-size的1.5倍。会计算具体值，把<strong>具体值</strong>继承给后代。</li>
+</ul>
+<h2 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h2><ul>
+<li>hidden 溢出隐藏</li>
+<li>scroll  溢出滚动</li>
+<li>auto  浏览器决定</li>
+<li>visible  溢出展示</li>
+<li>overflow不为visible会创建BFC，用于避免父子外边距折叠</li>
+</ul>
+<h2 id="显示隐藏"><a href="#显示隐藏" class="headerlink" title="显示隐藏"></a>显示隐藏</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;<br>    <span class="hljs-comment">/*从普通流中移除，不占据位置*/</span><br>    <span class="hljs-attribute">display</span>: none;<br>    <span class="hljs-comment">/*在普通流中，透明度可调节，占据位置*/</span><br>    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">/*在普通流中，看不见，但占据位置*/</span><br>    <span class="hljs-attribute">visibility</span>: hidden;<br>  &#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 
                 
               </div>
