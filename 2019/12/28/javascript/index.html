@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="zyc2333">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="引入1.引入js： &lt;script src&#x3D;&quot;&quot;&gt;&lt;&#x2F;script&gt;  2.&lt;script&gt;&lt;&#x2F;script&gt;建议放在body末尾 (why?)  变量 var let constexample:  12345var a &#x3D; 1let num &#x3D; 1;let str &#x3D;&quot;hello&quot;;let obj&#x3D;&amp;#123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS">
+<meta property="og:url" content="https://zyc2333.github.io/2019/12/28/javascript/index.html">
+<meta property="og:site_name" content="Academy City">
+<meta property="og:description" content="引入1.引入js： &lt;script src&#x3D;&quot;&quot;&gt;&lt;&#x2F;script&gt;  2.&lt;script&gt;&lt;&#x2F;script&gt;建议放在body末尾 (why?)  变量 var let constexample:  12345var a &#x3D; 1let num &#x3D; 1;let str &#x3D;&quot;hello&quot;;let obj&#x3D;&amp;#123">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-28T13:13:23.000Z">
+<meta property="article:modified_time" content="2023-02-28T14:19:26.876Z">
+<meta property="article:author" content="zyc2333">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>JS - Academy City</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"zyc2333.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Academy</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="JS"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2019-12-28 21:13" pubdate>
+          2019年12月28日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">JS</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><pre><code class="hljs">1.引入js：
+&lt;script src=&quot;&quot;&gt;&lt;/script&gt;
+
+2.&lt;script&gt;&lt;/script&gt;建议放在body末尾
+(why?)
+</code></pre>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><ul>
+<li>var</li>
+<li>let</li>
+<li>const<br>example:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span><br><span class="hljs-keyword">let</span> num = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">let</span> str =<span class="hljs-string">&quot;hello&quot;</span>;<br><span class="hljs-keyword">let</span> obj=&#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;hello&quot;</span>&#125;;<br><span class="hljs-keyword">const</span> url=<span class="hljs-string">&quot;www.baidu.com&quot;</span>;<br></code></pre></td></tr></table></figure>
+<h1 id="标识符规范"><a href="#标识符规范" class="headerlink" title="标识符规范"></a>标识符规范</h1><ul>
+<li>字母、_或者$开头</li>
+<li>区分大小写</li>
+<li>后续的字符是数字、字母、下划线、$</li>
+<li>中文合法</li>
+<li>保留字不能作为标识符</li>
+<li>example： <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> $this = <span class="hljs-string">&quot;hello&quot;</span><br><span class="hljs-keyword">var</span> _color= <span class="hljs-string">&quot;blue&quot;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h1><ul>
+<li>2+3</li>
+<li>3&gt;2</li>
+<li>a&#x3D;5</li>
+<li>(a&gt;1&amp;&amp;b&gt;2)</li>
+</ul>
+<h1 id="运算符与表达式"><a href="#运算符与表达式" class="headerlink" title="运算符与表达式"></a>运算符与表达式</h1><ul>
+<li><p>算术运算符：</p>
+<p>  1.<strong>+</strong>:两个都是字符串有一个是字符串，会转化成字符串拼接。<br>  -*&#x2F;</p>
+<p>  2.余数：%</p>
+<p>  3.自增&#x2F;自减：++x&#x2F;x++【区别：a&#x3D;1 a++ c&#x3D;a++&#x2F;&#x2F;c&#x3D;1】</p>
+<p>  4.x+&#x3D;y等同x&#x3D;x+y</p>
+<p>  5.x%&#x3D;y 等同 x&#x3D;x%y</p>
+<p>  6.x**y&#x3D;x^y</p>
+</li>
+<li><p>比较运算符</p>
+<p>  &#x3D;&#x3D; 相等</p>
+<p>  &#x3D;&#x3D;&#x3D; 严格相等</p>
+<p>  !&#x3D;不相等</p>
+<p>  !&#x3D;&#x3D;严格不相等</p>
+</li>
+<li><p>布尔运算符</p>
+<p>  1.!x</p>
+<p>  2.x&amp;&amp;y</p>
+<p>  3.x||y</p>
+<p>  4.isTrue?a:b三元条件运算符</p>
+</li>
+<li><p>其他运算符</p>
+<p>  位运算符：or，and，xor，not,left shift,right shift.</p>
+<p>  逗号运算符：返回逗号后面的值</p>
+<p>  void运算符：执行一个表达式，返回undefined</p>
+</li>
+<li><p>typeof</p>
+<p>  用于检测类型。</p>
+<p>  typeof null  &#x2F;&#x2F;<strong>output</strong>:”object”</p>
+<p>  typeof function(){} &#x2F;&#x2F; <strong>output</strong>:”function”</p>
+</li>
+<li><p>Array.isArray(arr)判断是不是数组，后续才好用数组的方法处理</p>
+</li>
+</ul>
+<h1 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h1><h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p> &#x2F;&#x2F; &#x2F;**&#x2F;</p>
+<h1 id="数据类型（8种）"><a href="#数据类型（8种）" class="headerlink" title="数据类型（8种）"></a>数据类型（8种）</h1><ul>
+<li>7种原始类型<br>  1.布尔值<br>  2.null<br>  3.undefined<br>  4.Number:-2^53~2^52<br>  5.BigInt:100n<br>  6.String<br>  7.Symbol</li>
+<li>1种复合类型<br>  除了以上都是对象（Object），比如狭义的对象、函数、数组。</li>
+<li>如果数字超出精度限制，怎么办？【用字符串】</li>
+<li>null和undefined的区别？</li>
+</ul>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h1 id="结合性和优先级"><a href="#结合性和优先级" class="headerlink" title="结合性和优先级"></a>结合性和优先级</h1><ul>
+<li><p>结合性</p>
+</li>
+<li><p>优先级</p>
+</li>
+<li><p>优先级从低到高</p>
+<p>  , &#x3D; || &amp;&amp; &#x3D;&#x3D;&#x3D; &gt;.&lt; +- *&#x2F; ()</p>
+</li>
+<li><p>一些反直觉的优先级</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">typeof</span> <span class="hljs-number">3</span>+<span class="hljs-number">2</span><br><span class="hljs-string">&#x27;number2&#x27;</span><br><span class="hljs-keyword">typeof</span> (<span class="hljs-number">3</span>+<span class="hljs-number">2</span>)<br><span class="hljs-string">&#x27;number&#x27;</span><br><span class="hljs-keyword">typeof</span> <span class="hljs-keyword">typeof</span> <span class="hljs-number">2</span>+<span class="hljs-number">3</span><br><span class="hljs-string">&#x27;string3&#x27;</span><br>a=<span class="hljs-number">1</span><br>b=<span class="hljs-number">2</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a+++b)<br><span class="hljs-keyword">let</span> x = (c =<span class="hljs-number">1</span> ,d =<span class="hljs-number">2</span>)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x,c,d)<br><span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="数字-日常用法"><a href="#数字-日常用法" class="headerlink" title="数字-日常用法"></a>数字-日常用法</h1><ul>
+<li><p>parseInt(‘100’,x)</p>
+<p>  x进制的字符串100变成整数100;</p>
+</li>
+<li><p>parseInt(‘15.2’)</p>
+<p>   小数变成整数；</p>
+</li>
+<li><p>不建议存储浮点数，精度容易丢失</p>
+</li>
+<li><p>parseFloat</p>
+<p>把浮点型字符串变成浮点数;</p>
+</li>
+<li><p>x.toFixed(2)</p>
+<p>  x保留两位小数</p>
+</li>
+<li><p>x.toPrecision(5)</p>
+<p>  限制整数加小数的总位数（不会四舍五入）。</p>
+</li>
+<li><p>2 ** 53 - 1&lt; 2 ** 53 + 1</p>
+<p>  false【超出最大安全值2**53】</p>
+<p>  最大值vs最大安全值</p>
+<p>  <strong>大数用大数运算方法</strong></p>
+</li>
+<li><p>数学运算</p>
+<p> Math.abs,   Math.floor,<br> Math.cell,<br> Math.round,<br> **Math.random()**【&gt;&#x3D;0&amp;&amp;!&#x3D;1】</p>
+</li>
+<li><p>字符串基础</p>
+<p>  字符串包含换行符要用<code> </code>代替””来表示。</p>
+<p>  .\用来转义</p>
+<p>  字符串模板  <strong>`${变量}&#96;</strong></p>
+<p>  example：<br>  “hello${name}”</p>
+</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>JS</div>
+      <div>https://zyc2333.github.io/2019/12/28/javascript/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>zyc2333</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2019年12月28日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/12/03/css_part2/" title="CSS进阶">
+                        <span class="hidden-mobile">CSS进阶</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
