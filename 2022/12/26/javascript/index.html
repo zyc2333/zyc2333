@@ -18,19 +18,19 @@
   
     <meta name="description" content="引入1.引入js： &lt;script src&#x3D;&quot;&quot;&gt;&lt;&#x2F;script&gt;  2.&lt;script&gt;&lt;&#x2F;script&gt;建议放在body末尾 (why?)  变量 var let constexample:  12345var a &#x3D; 1let num &#x3D; 1;let str &#x3D;&quot;hello&quot;;let obj&#x3D;&amp;#123">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS">
-<meta property="og:url" content="https://zyc2333.github.io/2019/12/28/javascript/index.html">
+<meta property="og:title" content="Academy City">
+<meta property="og:url" content="https://zyc2333.github.io/2022/12/26/javascript/index.html">
 <meta property="og:site_name" content="Academy City">
 <meta property="og:description" content="引入1.引入js： &lt;script src&#x3D;&quot;&quot;&gt;&lt;&#x2F;script&gt;  2.&lt;script&gt;&lt;&#x2F;script&gt;建议放在body末尾 (why?)  变量 var let constexample:  12345var a &#x3D; 1let num &#x3D; 1;let str &#x3D;&quot;hello&quot;;let obj&#x3D;&amp;#123">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-28T13:13:23.000Z">
-<meta property="article:modified_time" content="2023-02-28T14:19:26.876Z">
+<meta property="article:published_time" content="2022-12-26T12:58:46.710Z">
+<meta property="article:modified_time" content="2023-03-04T04:01:32.399Z">
 <meta property="article:author" content="zyc2333">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>JS - Academy City</title>
+  <title>Academy City</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="JS"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -206,8 +206,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2019-12-28 21:13" pubdate>
-          2019年12月28日 晚上
+        <time datetime="2022-12-26 20:58" pubdate>
+          2022年12月26日 晚上
         </time>
       </span>
     
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          4k 字
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          15 分钟
+          34 分钟
         
       </span>
     
@@ -267,7 +267,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JS</h1>
+            <h1 style="display: none"></h1>
             
             
               <div class="markdown-body">
@@ -376,13 +376,139 @@
 <li><p>数学运算</p>
 <p> Math.abs,   Math.floor,<br> Math.cell,<br> Math.round,<br> **Math.random()**【&gt;&#x3D;0&amp;&amp;!&#x3D;1】</p>
 </li>
-<li><p>字符串基础</p>
-<p>  字符串包含换行符要用<code> </code>代替””来表示。</p>
-<p>  .\用来转义</p>
-<p>  字符串模板  <strong>`${变量}&#96;</strong></p>
-<p>  example：<br>  “hello${name}”</p>
-</li>
 </ul>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><pre><code class="hljs">字符串包含换行符要用` `代替&quot;&quot;来表示。
+
+.\用来转义
+
+字符串模板  **\`$&#123;变量&#125;`**
+
+example：
+&quot;hello$&#123;name&#125;&quot;
+</code></pre>
+<h2 id="访问和拼接"><a href="#访问和拼接" class="headerlink" title="访问和拼接"></a>访问和拼接</h2><pre><code class="hljs">1.访问
+str=“hello”
+str.charAt(0)
+str.charCodeAt(0)//获取第一位的unicode值，前128位即acii码
+
+2.xy拼接
+x+y
+z=x.concat(y)
+</code></pre>
+<h2 id="查找和截取"><a href="#查找和截取" class="headerlink" title="查找和截取"></a>查找和截取</h2><pre><code class="hljs">1.查找
+str.indexOf(x)//查找字符串x的位置，起始位是0
+str.lastIndexOf(x)//从后往前查找
+str.includes(x)//str是否包含X
+str.startsWith(x)//是否x开头
+str.endsWith(x)//是否x结尾
+2.截取
+str.substr(x,y)//截取从str[x]开始，长为y的片段
+str.substring(x,y)//截取str[x]到str[y]的片段
+</code></pre>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre><code class="hljs">str.split(x)//将str以x符号分割为个体
+str.trim()//去掉两边的空白字符
+str.trimLeft()//去掉左边的空白字符
+str.toUpperCase()//str变成大写
+str.toLowerCase()//str变成小写
+</code></pre>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h2><pre><code class="hljs">1.数组越界了是undefined，可以赋值。
+2.添加一个数可以直接加：arr[arr.length]=1。
+</code></pre>
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><h2 id="基础-2"><a href="#基础-2" class="headerlink" title="基础"></a>基础</h2><pre><code class="hljs">1.example
+let student = &#123;
+    name:&quot;Alice&quot;,age:20,
+    &#125;
+2.获取一个对象中不存在的属性则为undefined
+3.student[&#39;name&#39;];student.name;a=&#39;name&#39;,student[a]
+</code></pre>
+<h1 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h1><h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><pre><code class="hljs">1.if(case)&#123;
+    console.log(&quot;1&quot;)
+&#125;
+2.
+if(case)&#123;
+    console.log(&quot;1&quot;)
+&#125; else &#123;
+    console.log(&quot;2&quot;)
+&#125;
+3.
+if(case1)&#123;
+    console.log(&quot;3&quot;)
+&#125; else if(case2) &#123;
+    console.log(&quot;4&quot;)
+&#125;
+</code></pre>
+<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><pre><code class="hljs">1.switch(expression)&#123;
+    case value1:
+        statement;
+        break;
+    case value2:
+    ...
+&#125;
+2.如果不加break会继续往下执行。
+</code></pre>
+<h2 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h2><h2 id="for-in-语句"><a href="#for-in-语句" class="headerlink" title="for-in 语句"></a>for-in 语句</h2><pre><code class="hljs">let obj = &#123;
+    name: &quot;abc&quot;,
+    age: 20
+&#125;
+for(let key in obj)&#123;
+    console.log(&#39;$&#123;key&#125;:$&#123;obj[key]&#125;&#39;);
+&#125;
+ps:对应的是下标
+</code></pre>
+<h2 id="for-of-语句"><a href="#for-of-语句" class="headerlink" title="for-of 语句"></a>for-of 语句</h2><pre><code class="hljs">for(let char of &#39;hello&#39;)&#123;
+    str+ = char + char;
+&#125;
+console.log(str);//hheelllloo
+ps:对应的是值
+</code></pre>
+<h2 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h2><pre><code class="hljs">遇到后跳过本次循环
+</code></pre>
+<h2 id="break"><a href="#break" class="headerlink" title="break"></a>break</h2><h2 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h2><pre><code class="hljs">1.function(num1,num2)&#123;
+    let sum = num1 + num2;
+    return sum;
+&#125;
+2.声明方式：
+函数声明 vs 函数表达式
+函数声明：如1.
+函数表达式：如const fx = function(name)&#123;
+    console.log(&quot;hello&quot;+name);
+&#125;
+函数声明可以调用在前，声明在后；函数表达式只能先声明后调用。
+3.return
+默认返回undefined.
+</code></pre>
+<h2 id="箭头函数（仅限于少部分情况）"><a href="#箭头函数（仅限于少部分情况）" class="headerlink" title="箭头函数（仅限于少部分情况）"></a>箭头函数（仅限于少部分情况）</h2><pre><code class="hljs">简化函数表达形式：
+例如：
+function sum(a,b)&#123;
+    sum=a+b;
+    return sum;
+&#125;
+const sum = (a,b) =&gt; a+b;//箭头函数
+const obj= name =&gt; (&#123;name: name&#125;)
+const sum=a =&gt;b =&gt; a+b
+console.log( sum(1)(2) )
+</code></pre>
+<h2 id="一些实例"><a href="#一些实例" class="headerlink" title="一些实例"></a>一些实例</h2><pre><code class="hljs">//二进制转化为十进制，记住将str类型转化为int，字符之间的“+”代表连接
+function toDecimal(str)&#123;
+    let num = 0;
+    for(i=0;i&lt;str.length;i++)&#123;
+        num=num*2+parseInt(str[i]);
+        console.log(num);
+    &#125;
+    return num;
+&#125;
+let str=&quot;111&quot;;
+let ans = toDecimal(str);
+console.log(ans);
+//生成随机颜色，注意return后面是``不是单引号
+let dic= &#39;0123456789abcdef&#39;;
+function colorProduce()&#123;
+    const num = () =&gt; Math.floor(Math.random()*dic.length);
+    return `#$&#123;num()&#125;$&#123;num()&#125;$&#123;num()&#125;$&#123;num()&#125;$&#123;num()&#125;`;
+&#125;
+res = colorProduce();
+console.log(res);
+</code></pre>
 
                 
               </div>
@@ -400,8 +526,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>JS</div>
-      <div>https://zyc2333.github.io/2019/12/28/javascript/</div>
+      <div></div>
+      <div>https://zyc2333.github.io/2022/12/26/javascript/</div>
     </div>
     <div class="license-meta">
       
@@ -413,7 +539,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2019年12月28日</div>
+          <div>2022年12月26日</div>
         </div>
       
       
