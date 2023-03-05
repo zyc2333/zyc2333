@@ -24,7 +24,7 @@
 <meta property="og:description" content="引入1.引入js： &lt;script src&#x3D;&quot;&quot;&gt;&lt;&#x2F;script&gt;  2.&lt;script&gt;&lt;&#x2F;script&gt;建议放在body末尾 (why?)  变量 var let constexample:  12345var a &#x3D; 1let num &#x3D; 1;let str &#x3D;&quot;hello&quot;;let obj&#x3D;&amp;#123">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-26T12:58:46.710Z">
-<meta property="article:modified_time" content="2023-03-04T04:01:32.399Z">
+<meta property="article:modified_time" content="2023-03-05T15:06:51.630Z">
 <meta property="article:author" content="zyc2333">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4k 字
+          4.5k 字
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          34 分钟
+          38 分钟
         
       </span>
     
@@ -508,6 +508,42 @@ function colorProduce()&#123;
 &#125;
 res = colorProduce();
 console.log(res);
+</code></pre>
+<h2 id="引用类型（存储的是地址）"><a href="#引用类型（存储的是地址）" class="headerlink" title="引用类型（存储的是地址）"></a>引用类型（存储的是地址）</h2><h2 id="参数传递（形参实参）"><a href="#参数传递（形参实参）" class="headerlink" title="参数传递（形参实参）"></a>参数传递（形参实参）</h2><h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域{}"></a>块级作用域{}</h2><pre><code class="hljs">- let const存在块级作用域
+- var没有块级作用域
+</code></pre>
+<h2 id="var-let-const的区别"><a href="#var-let-const的区别" class="headerlink" title="var\let\const的区别"></a>var\let\const的区别</h2><pre><code class="hljs">-var 
+    是ES3定义变量的方式；
+    在作用域内声明前置
+    可重复声明
+    没有块级作用域
+- let
+    let和const是ES6定义变量的方式
+    先声明再适用（无声明前置）
+    不可重复声明（大括号里可重复声明）
+    有块级作用域
+- const
+    同let
+    声明时需要立即初始化
+    **初始化后不能再修改！**
+</code></pre>
+<h2 id="函数声明和函数表达式的区别"><a href="#函数声明和函数表达式的区别" class="headerlink" title="函数声明和函数表达式的区别"></a>函数声明和函数表达式的区别</h2><pre><code class="hljs">函数表达式必须前置才不会报错，而函数声明不用前置也不会报错。
+</code></pre>
+<h2 id="词法作用域、作用域链"><a href="#词法作用域、作用域链" class="headerlink" title="词法作用域、作用域链"></a>词法作用域、作用域链</h2><pre><code class="hljs">1.作用域是值和表达式能被访问的执行上下文
+2.如果值和表达式不在当前作用域，就无法访问
+3.作用域有层级，子作用域可访问祖先作用域变量
+4.作用域种类：
+    全局作用域；
+    函数作用域；
+    块级作用域（&#123;&#125;创建）；
+    模块作用域（模块模式下）。
+5.词法作用域
+    被创建函数所在的作用域。
+6.作用域链
+    先从自己作用域找，再去被创建的作用域找，直到最上层。
+7.声明前置
+8.TDZ
+    CONST和let声明的变量在当前作用域的开头（&#39;&#123;&#39;）到声明的区域是暂时性死区，不可以用该变量。
 </code></pre>
 
                 
