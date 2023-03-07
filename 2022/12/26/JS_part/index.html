@@ -24,7 +24,7 @@
 <meta property="og:description" content="引入1.引入js： &lt;script src&#x3D;&quot;&quot;&gt;&lt;&#x2F;script&gt;  2.&lt;script&gt;&lt;&#x2F;script&gt;建议放在body末尾 (why?)  变量 var let constexample:  12345var a &#x3D; 1let num &#x3D; 1;let str &#x3D;&quot;hello&quot;;let obj&#x3D;&amp;#123">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-26T12:58:46.710Z">
-<meta property="article:modified_time" content="2023-03-05T15:06:51.630Z">
+<meta property="article:modified_time" content="2023-03-07T15:06:16.087Z">
 <meta property="article:author" content="zyc2333">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.5k 字
+          5.9k 字
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          38 分钟
+          50 分钟
         
       </span>
     
@@ -544,6 +544,85 @@ console.log(res);
 7.声明前置
 8.TDZ
     CONST和let声明的变量在当前作用域的开头（&#39;&#123;&#39;）到声明的区域是暂时性死区，不可以用该变量。
+</code></pre>
+<h2 id="数组API"><a href="#数组API" class="headerlink" title="数组API"></a>数组API</h2><pre><code class="hljs">1.栈、队列方法
+pop//栈尾弹出
+push//栈尾推入
+unshift//队头推入
+shift//队头移出
+2.arr.spice(a,b,c)在arr上实现删除/插入
+a:开始的索引位置（插入在a前）;
+b:删除元素的个数;
+c:插入的新元素，可以写多个;
+3.concat
+数组拼接：数组+数组/数字；
+原数组不变。
+4.join
+用split拼接为字符串，再用join连成字符串。
+5.sort
+默认把元素转当成字符排序；需要传递排序函数。
+v1&gt;v2?1:-1
+if(v1&gt;v2)&#123;
+    return  1;
+&#125;else&#123;
+    return -1;
+&#125;
+6.reverse（翻转函数）
+</code></pre>
+<h3 id="sort进阶"><a href="#sort进阶" class="headerlink" title="sort进阶"></a>sort进阶</h3><pre><code class="hljs">数组包含对象，按对象字段排序
+students.sort((s1,s2)=&gt;s1.score&gt;s2.score?1:-1)
+//按照score排序
+</code></pre>
+<h2 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h2><h3 id="forEach、-map方法"><a href="#forEach、-map方法" class="headerlink" title=".forEach、.map方法"></a>.forEach、.map方法</h3><pre><code class="hljs">1.arr.forEach(option)
+arr的每一项都执行option操作，注意option是一个函数。
+2.arr.forEach(function(val,i,arr)&#123;
+    arr[i]=val*val;
+&#125;)
+//val是arr[i]的值。
+//arr[i]被赋予新值。
+3.arr.map(option)
+option返回值组成新数组，原数组不变。
+4.let arr1 = arr.map(v =&gt; v*v)
+//得到原数组的平方，但原数组不变
+</code></pre>
+<h3 id="filter、-reduce方法"><a href="#filter、-reduce方法" class="headerlink" title=".filter、.reduce方法"></a>.filter、.reduce方法</h3><pre><code class="hljs">1.arr.filter(v=&gt;v&gt;0)
+过滤出满足条件的元素，构建新数组
+2.arr.reduce(function(temp,v),initialValue)
+遍历数组，调用回调函数，将数组元素组合成一个值
+初始值可选 
+example:
+add=[4,-2,-1,9]
+let result =  arr.reduce((sum,v) =&gt;sum +v,0);
+console.log(result);//10
+</code></pre>
+<h3 id="every-some方法"><a href="#every-some方法" class="headerlink" title=".every,.some方法"></a>.every,.some方法</h3><pre><code class="hljs">1.arr.every(callback)
+所有回调函数都返回true的时候才会返回true，否则返回false。
+example:
+//数组全是整数吗
+let isPositive = arr.every(val =&gt; val&gt;0)
+console.log(isPositive)
+2.arr.some(callback)
+只要有一个为true就返回true
+</code></pre>
+<h3 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h3><pre><code class="hljs">1.arr.isArray//是否为数组
+2.indexOf//获取索引
+3.arr.includes(val)//是否包含val
+4.Array(len)//创建一个长为len的数组;空属性的数组无法遍历
+5.类数组对象变成数组
+obj:&#123;0:3,1:4,length:2&#125;
+Array.from(obj)//生成[3,4]
+6.把可迭代对象变成数组：
+[...&#39;abc&#39;]//[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]
+function fn(...arg)&#123;
+    ;
+&#125;
+7.fill(val)//全部填充为val
+</code></pre>
+<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><pre><code class="hljs">1.使用filter实现数组去重
+let arr2 = arr.filter((v,i)=&gt;arr.indexOf(v)===i)
+2.在原数组上进行操作
+用哈希
+3.
 </code></pre>
 
                 
