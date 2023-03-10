@@ -24,7 +24,7 @@
 <meta property="og:description" content="引入1.引入js： &lt;script src&#x3D;&quot;&quot;&gt;&lt;&#x2F;script&gt;  2.&lt;script&gt;&lt;&#x2F;script&gt;建议放在body末尾 (why?)  变量 var let constexample:  12345var a &#x3D; 1let num &#x3D; 1;let str &#x3D;&quot;hello&quot;;let obj&#x3D;&amp;#123">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-26T12:58:46.710Z">
-<meta property="article:modified_time" content="2023-03-07T15:06:16.087Z">
+<meta property="article:modified_time" content="2023-03-10T14:37:08.448Z">
 <meta property="article:author" content="zyc2333">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.9k 字
+          7.4k 字
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          50 分钟
+          62 分钟
         
       </span>
     
@@ -550,7 +550,7 @@ pop//栈尾弹出
 push//栈尾推入
 unshift//队头推入
 shift//队头移出
-2.arr.spice(a,b,c)在arr上实现删除/插入
+2.arr.splice(a,b,c)在arr上实现删除/插入
 a:开始的索引位置（插入在a前）;
 b:删除元素的个数;
 c:插入的新元素，可以写多个;
@@ -622,7 +622,84 @@ function fn(...arg)&#123;
 let arr2 = arr.filter((v,i)=&gt;arr.indexOf(v)===i)
 2.在原数组上进行操作
 用哈希
-3.
+3.用set
+new Set(arr)
+4.手动去重
+if(!arr.has) add;
+else splce;
+</code></pre>
+<h2 id="symbol"><a href="#symbol" class="headerlink" title="symbol"></a>symbol</h2><pre><code class="hljs">1.JS的内置原始类型
+2.每个symbol都不相同
+3.example:
+const sys = Symbol();
+4.object的属性是字符串,如果将object作为对象的属性，则会调用.toString()，转化为&#39;[object Object]&#39;
+</code></pre>
+<h2 id="set对象"><a href="#set对象" class="headerlink" title="set对象"></a>set对象</h2><pre><code class="hljs">set对象是值的集合,不会重复
+let set = new set();
+set.add(val);
+set.delete(val);
+set.has(val);
+set.size;//length
+set.clear();
+set.forEach(callback)
+[...set]//变成数组
+</code></pre>
+<h2 id="Map对象"><a href="#Map对象" class="headerlink" title="Map对象"></a>Map对象</h2><pre><code class="hljs">1.是键对值的集合。Map中的一个键只能出现一次。任何值都可作为键和值。
+
+2.Object和Map的区别：
+Map键可以是任何类型，Object只能是字符串和Symbol；
+Map的键是有序的，Object是无序的；
+Map可以获取size，Object需要自己计算；
+Map性能更好；
+Map是可迭代的可用for...of.Object是不可迭代的，可用for...in遍历；
+</code></pre>
+<h2 id="WeakMap"><a href="#WeakMap" class="headerlink" title="WeakMap"></a>WeakMap</h2><pre><code class="hljs">key是引用类型时常用。其他和Map相似；弱引用。
+</code></pre>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="创建表达式"><a href="#创建表达式" class="headerlink" title="创建表达式"></a>创建表达式</h2><h3 id="字面量方式"><a href="#字面量方式" class="headerlink" title="字面量方式"></a>字面量方式</h3><pre><code class="hljs">let reg = /+86\d&#123;11&#125;/g
+</code></pre>
+<h3 id="构造函数方式创建"><a href="#构造函数方式创建" class="headerlink" title="构造函数方式创建"></a>构造函数方式创建</h3><pre><code class="hljs">let name = &quot;lihua&quot;;
+let reg = new RegExp(&#39;hello,&#39;+name,&#39;g&#39;);
+g:global，全文搜索，不添加的话搜索到第一个结果停止搜索；
+i：ignore case,忽略大小写，默认大小写敏感；
+m：multiple lines,多行搜索。
+</code></pre>
+<h2 id="简单用法"><a href="#简单用法" class="headerlink" title="简单用法"></a>简单用法</h2><h3 id="在正则上用"><a href="#在正则上用" class="headerlink" title="在正则上用"></a>在正则上用</h3><pre><code class="hljs">let reg = /hello/
+reg.test(&#39;hello world&#39;)
+</code></pre>
+<h3 id="在字符串上用"><a href="#在字符串上用" class="headerlink" title="在字符串上用"></a>在字符串上用</h3><pre><code class="hljs">let str = &#39;hello1 world,hello2 cn&#39;
+str.search(/hello\d/) //0
+str.match(/hello\d/g)//hello1,hello2
+str.replace(/hello\d/,&#39;hi&#39;)//&quot;hi world,hi cn&quot;
+str.split(/\s/)
+</code></pre>
+<h2 id="专用字符"><a href="#专用字符" class="headerlink" title="专用字符"></a>专用字符</h2><h3 id="具有特殊意义的字符"><a href="#具有特殊意义的字符" class="headerlink" title="具有特殊意义的字符"></a>具有特殊意义的字符</h3><pre><code class="hljs">( [ &#123; \ ^ $ | &#125; ] ) * + .
+</code></pre>
+<h3 id="单字符匹配"><a href="#单字符匹配" class="headerlink" title="单字符匹配"></a>单字符匹配</h3><pre><code class="hljs">[abcd] //匹配一个字符，是abcd中的任意一个
+[0-9] //匹配一个0-9的数字
+[a-zA-Z]//匹配一个不限制大小写的字母
+[^abc]//不是a/b/c的字符
+</code></pre>
+<h3 id="预定义匹配"><a href="#预定义匹配" class="headerlink" title="预定义匹配"></a>预定义匹配</h3><pre><code class="hljs">. //等价于[^\r\n]，匹配一个除回车和换行以外的任意字符
+\d //等价于[0-9]，匹配一个数字字符
+\D //等价于[^0-9],匹配一个非数字字符
+\s //等价于[空格\t\tn\r\v\f],匹配一个空白字符
+\S //匹配一个非空白字符
+\w //等价于[a-zA-Z_0-9],匹配一个字母、数字、下划线
+\W //匹配一个非单词字符（例如：he-llo=&gt;he,llo）
+</code></pre>
+<h3 id="0个或多个"><a href="#0个或多个" class="headerlink" title="0个或多个"></a>0个或多个</h3><pre><code class="hljs">? //前面的字符出现最多1次
++     // 大于等于1次
+*     // 大于等于0
+&#123;n&#125;   //出现n次
+&#123;n,m&#125;//[n,m]次
+&#123;n,&#125; //大于等于n次
+</code></pre>
+<h3 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h3><pre><code class="hljs">/^xyz/ 以xyz开头(边界！不是单字符匹配，区别在于[])
+/abc$/ 以abc结尾
+/\babc\b/ 匹配是单词的abc（左右两侧是字符串开头、结尾、中横线、空格）
+/\Babc\B/ 匹配不是单词的abc
+
+^开头，$结尾。
 </code></pre>
 
                 
