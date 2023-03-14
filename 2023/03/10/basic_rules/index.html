@@ -24,7 +24,7 @@
 <meta property="og:description" content="浏览器渲染机制渲染流程1.解析html标签，构建DOM树； 2.解析css标签，构建CSSOM树； 3.把DOM和CSSOM组成成渲染树； 4.在渲染树的基础上布局，计算每个节点的几何结构； 5.把每个节点绘制到屏幕上。  重绘(repaint)、回流(reflow)1.repaint：重新计算元素的几何尺寸、位置 2.reflow:绘制界面发生变化的部分 3.案例： 添加、删除、更新DOM节点">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-10T14:41:22.213Z">
-<meta property="article:modified_time" content="2023-03-12T08:32:31.640Z">
+<meta property="article:modified_time" content="2023-03-14T15:35:15.054Z">
 <meta property="article:author" content="zyc2333">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          2.2k 字
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          9 分钟
+          19 分钟
         
       </span>
     
@@ -312,7 +312,57 @@ defer保证DOM资源准备就绪后执行，对多个defer的外置JS按顺序�
 4.获取CSS，解析后续HTML。
 5.解析完毕，构建DOM树、CSSOM树，合并计算得到渲染树，绘制。
 </code></pre>
+<h1 id="JS-DOM"><a href="#JS-DOM" class="headerlink" title="JS DOM"></a>JS DOM</h1><pre><code class="hljs">文档对象模型（document object model），是jtml的编程接口，修改DOM可以改变页面上的东西。
+</code></pre>
+<h2 id="元素的获取、遍历"><a href="#元素的获取、遍历" class="headerlink" title="元素的获取、遍历"></a>元素的获取、遍历</h2><pre><code class="hljs">document.querySelector(&#39;.box&#39;)//获取第一个符合条件的element，参数是任一合法的CSS3选择器
 
+document.querySelectorAll(&#39;.box&#39;)//获取的是NodeList，类数组对象，包含多个ELement，需要遍历才能操作
+
+以上是ES5的写法，推荐。
+其他如getElementById、getElementByClassName等是ES3写法，已过时，不推荐。
+</code></pre>
+<h2 id="遍历NodeList和HTMLCollection"><a href="#遍历NodeList和HTMLCollection" class="headerlink" title="遍历NodeList和HTMLCollection"></a>遍历NodeList和HTMLCollection</h2><h2 id="querySelector技巧"><a href="#querySelector技巧" class="headerlink" title="querySelector技巧"></a>querySelector技巧</h2><pre><code class="hljs">dom对象用$开头命名
+</code></pre>
+<h2 id="DOM元素属性"><a href="#DOM元素属性" class="headerlink" title="DOM元素属性"></a>DOM元素属性</h2><pre><code class="hljs">常见属性：
+node.nodeName:元素标签名。
+node.className:类名。
+node.id:元素ID.
+node.nodeType:元素类型。
+
+关系遍历：
+node.children:子元素列表(HTMLCollection,不包含文本节点)
+node.childNodes:子元素列表（NodeList，包含文本节点）
+
+firstChild,lastChild,nextSibling,parentNode
+
+其他 
+- document.body === document.querySelector(&#39;body&#39;)
+- document.head同上
+- document.title=querySelector(&#39;title&#39;).innerText
+</code></pre>
+<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><pre><code class="hljs">onclick 类似于声明一个函数，点击时才会运行
+</code></pre>
+<h2 id="元素增删改查"><a href="#元素增删改查" class="headerlink" title="元素增删改查"></a>元素增删改查</h2><h3 id="DOM创建、追加"><a href="#DOM创建、追加" class="headerlink" title="DOM创建、追加"></a>DOM创建、追加</h3><pre><code class="hljs">createElement(标签名);
+
+createTextNode(字符串);
+
+appendChild(DOM节点)；//放到DOM节点尾部，不推荐使用
+
+append();//尾部追加DOM节点或字符串
+
+createDocumentFragment()//创造一个虚拟容器，调用时直接添加此容器，避免多次DOM操作
+
+例：
+let $node = document.creatElement(&#39;div&#39;)
+let $text = document.createTextNode(&#39;hello&#39;)
+$node.appendChild($text)//把hello放在div里
+document.body.appendChild($div)//把div添加到body里
+</code></pre>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><pre><code class="hljs">innerHTML;
+$node.innerHTML=&#39;xxx&#39;//通常禁止使用，不安全
+$node.innerText=&#39;xxx&#39;
+</code></pre>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
                 
               </div>
             
